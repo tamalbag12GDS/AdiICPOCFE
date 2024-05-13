@@ -1,18 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { EChartsComponent } from './e-charts/e-charts.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartJsComponent } from './chart-js/chart-js.component';
+import { D3JsComponent } from './d3-js/d3-js.component';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, EChartsComponent, ChartJsComponent, D3JsComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    NgChartsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

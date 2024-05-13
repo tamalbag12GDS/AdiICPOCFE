@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.position {
+  position: relative;
+  height: 90vh;
+  width: 40%;
+}
